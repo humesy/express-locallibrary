@@ -44,7 +44,7 @@ app.use(function(err, req, res, next) {
 });
 
 //Set Up Mongoose
-var mongoDB = "mongodb://webtask:webtask1@ds133762.mlab.com:33762/cloudtest";
+var mongoDB = process.env.MONGODB_URI || "mongodb://webtask:webtask1@ds133762.mlab.com:33762/cloudtest";
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
